@@ -9,10 +9,10 @@ import com.zbw.mapper.BorrowingBooksMapper;
 import com.zbw.mapper.UserMapper;
 import com.zbw.service.IBorrowingBooksRecordService;
 import com.zbw.utils.page.Page;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -36,7 +36,7 @@ public class BorrowingBooksRecordServiceImpl implements IBorrowingBooksRecordSer
         if (null == list) {
             return null;
         }
-        Page<BorrowingBooksVo> page = new Page<BorrowingBooksVo>();
+        Page<BorrowingBooksVo> page = new Page<>();
         List<BorrowingBooksVo> borrowingBooksVos = new LinkedList<>();
         for (BorrowingBooks b : list) {
             User user = userMapper.selectByPrimaryKey(b.getUserId());
@@ -66,7 +66,7 @@ public class BorrowingBooksRecordServiceImpl implements IBorrowingBooksRecordSer
         page.setPageSize(10);
 
         //查找总页数
-        int recordCount = 0;//总和记录
+        int recordCount;//总和记录
         recordCount = borrowingBooksMapper.selectAll();
         //计算页数
         int pageCount = recordCount / 10;

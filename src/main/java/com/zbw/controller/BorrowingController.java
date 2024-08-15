@@ -3,12 +3,12 @@ package com.zbw.controller;
 import com.zbw.domain.Vo.BorrowingBooksVo;
 import com.zbw.service.IBorrowingBooksRecordService;
 import com.zbw.utils.page.Page;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.annotation.Resource;
 
 @Controller
 public class BorrowingController {

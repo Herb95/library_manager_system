@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-242.20224.387">
+    <data-source name="library_manager_system@10.198.50.234" uuid="b12594be-f74e-447b-9936-a2f8f61dd3fa">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <user-name>graywolfz</user-name>
+      <schema-mapping />
+      <ssh-properties>
+        <enabled>false</enabled>
+        <ssh-config-id>b5c861df-1fd8-4a46-929f-670312ac4239</ssh-config-id>
+      </ssh-properties>
+    </data-source>
+  </component>
+</project>

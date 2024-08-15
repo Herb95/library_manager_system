@@ -8,10 +8,10 @@ import com.zbw.mapper.DepartmentMapper;
 import com.zbw.mapper.UserMapper;
 import com.zbw.service.IUserService;
 import com.zbw.utils.page.Page;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -37,9 +37,7 @@ public class UserServiceImpl implements IUserService {
         UserExample.Criteria criteria = userExample.createCriteria();
         
         criteria.andUserNameEqualTo(userName);
-        List<User> users = userMapper.selectByExample(userExample);
-        
-        return users;
+        return userMapper.selectByExample(userExample);
     }
 
     @Override
@@ -96,7 +94,7 @@ public class UserServiceImpl implements IUserService {
             return null;
         }
         //将数据库表对应的对象(Do)转化成视图层对象（VO）
-        List<BorrowingBooksVo> res = new LinkedList<BorrowingBooksVo>();
+        List<BorrowingBooksVo> res = new LinkedList<>();
         for (BorrowingBooks borrowingBooks : borrowingBooksList) {
             Book book = bookMapper.selectByPrimaryKey(borrowingBooks.getBookId());
             BorrowingBooksVo borrowingBooksVo = new BorrowingBooksVo();

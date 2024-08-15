@@ -3,8 +3,8 @@ package com.zbw.service;
 import com.zbw.domain.Admin;
 import com.zbw.domain.Book;
 import com.zbw.domain.BookCategory;
+import jakarta.servlet.http.HttpServletRequest;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface IAdminService {

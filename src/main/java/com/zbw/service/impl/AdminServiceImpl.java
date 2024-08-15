@@ -5,10 +5,10 @@ import com.zbw.mapper.AdminMapper;
 import com.zbw.mapper.BookCategoryMapper;
 import com.zbw.mapper.BookMapper;
 import com.zbw.service.IAdminService;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -31,10 +31,7 @@ public class AdminServiceImpl implements IAdminService {
         List<Admin> admin = adminMapper.selectByExample(adminExample);
         if (null == admin)
             return false;
-        if (admin.size() < 1) {
-            return false;
-        }
-        return true;
+        return !admin.isEmpty();
     }
 
     @Override
@@ -48,7 +45,7 @@ public class AdminServiceImpl implements IAdminService {
         if (null == admin) {
             return null;
         }
-        
+
         for (Admin a : admin) {
             if (a.getAdminPwd().equals(password)) {
                 return a;
@@ -75,10 +72,7 @@ public class AdminServiceImpl implements IAdminService {
     @Override
     public boolean addBookCategory(BookCategory bookCategory) {
         int n = bookCategoryMapper.insert(bookCategory);
-        if (n > 0) {
-            return true;
-        }
-        return false;
+        return n > 0;
     }
 
     @Override

@@ -4,8 +4,8 @@ import com.zbw.domain.Department;
 import com.zbw.domain.User;
 import com.zbw.domain.Vo.BorrowingBooksVo;
 import com.zbw.utils.page.Page;
+import jakarta.servlet.http.HttpServletRequest;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface IUserService {

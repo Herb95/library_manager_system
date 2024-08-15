@@ -4,9 +4,9 @@ import com.zbw.domain.BookCategory;
 import com.zbw.mapper.BookCategoryMapper;
 import com.zbw.service.IBookCategoryService;
 import com.zbw.utils.page.Page;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service

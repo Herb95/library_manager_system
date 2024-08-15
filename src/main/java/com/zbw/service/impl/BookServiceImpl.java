@@ -8,9 +8,9 @@ import com.zbw.mapper.BookMapper;
 import com.zbw.mapper.BorrowingBooksMapper;
 import com.zbw.service.IBookService;
 import com.zbw.utils.page.Page;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.LinkedList;
 import java.util.List;
 
